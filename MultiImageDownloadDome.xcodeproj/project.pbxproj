@@ -19,6 +19,7 @@
 		1CD4720D26032BB10079A357 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CD4720C26032BB10079A357 /* Assets.xcassets */; };
 		1CD4721026032BB10079A357 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CD4720E26032BB10079A357 /* LaunchScreen.storyboard */; };
 		1CD4721326032BB10079A357 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CD4721226032BB10079A357 /* main.m */; };
+		1CE15E7E2603885D00EA8A52 /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE15E7D2603885D00EA8A52 /* NSString+Base64.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,8 @@
 		1CD4720F26032BB10079A357 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1CD4721126032BB10079A357 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1CD4721226032BB10079A357 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1CE15E7C2603885D00EA8A52 /* NSString+Base64.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64.h"; sourceTree = "<group>"; };
+		1CE15E7D2603885D00EA8A52 /* NSString+Base64.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,8 @@
 				1C1BAC632603452A0047A303 /* MDDDownloadImageTool.m */,
 				1C1BAC66260348960047A303 /* UIImageView+MDDCache.h */,
 				1C1BAC67260348960047A303 /* UIImageView+MDDCache.m */,
+				1CE15E7C2603885D00EA8A52 /* NSString+Base64.h */,
+				1CE15E7D2603885D00EA8A52 /* NSString+Base64.m */,
 			);
 			path = core;
 			sourceTree = "<group>";
@@ -187,6 +192,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CE15E7E2603885D00EA8A52 /* NSString+Base64.m in Sources */,
 				1C1BAC5D26033EF10047A303 /* MDDImageCache.m in Sources */,
 				1C1BAC68260348960047A303 /* UIImageView+MDDCache.m in Sources */,
 				1CD4720826032BB00079A357 /* ViewController.m in Sources */,

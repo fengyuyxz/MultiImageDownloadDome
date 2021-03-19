@@ -10,7 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UIImageView (MDDCache)
--(void)mdd_setImage:(NSURL *)imageURL completion:(void(^)(UIImage *image,NSError *error))block;
+-(void)mdd_setImage:(NSURL *)imageURL placeholderImage:(UIImage * __nullable)placeholderImage completion:(void(^)(UIImage * __nullable image,NSError * __nullable error))block;
 @end
 
 NS_ASSUME_NONNULL_END

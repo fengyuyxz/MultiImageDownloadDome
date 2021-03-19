@@ -9,6 +9,7 @@
 #import "MDDItemModel.h"
 #import "MDDImageCache.h"
 #import "UIImageView+MDDCache.h"
+
 #define SPACE 5
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -22,10 +23,23 @@
     [super viewDidLoad];
     
     [self.tableView registerClass:[MDDTableCell class] forCellReuseIdentifier:@"MDDTableCell"];
-    MDDImageCache *m1=[[MDDImageCache alloc]init];
-    MDDImageCache *m2=[MDDImageCache shareMDDImageCache];
-    NSLog(@"%p -- %p",m1,m2);
+    
+    
 }
+- (void)didReceiveMemoryWarning{
+    //收到内存警告
+    
+    [MDDImageCache clearMemory];
+    [super didReceiveMemoryWarning];
+}
+- (IBAction)clearMemoryClick:(id)sender {
+    [MDDImageCache clearMemory];
+}
+- (IBAction)clearDisk:(id)sender
+{
+    [MDDImageCache clearDisk];
+}
+
 
 -(IBAction)startClick{
     __weak typeof(self) weakSefl = self;
@@ -70,6 +84,9 @@
     }
     return self;
 }
+-(void)dealloc{
+    
+}
 -(void)configUI{
     UIImageView *imgView = [[UIImageView alloc]init];
     imgView.backgroundColor = [UIColor colorWithRed:102/255.0f green:102/255.0f blue:102/255.0f alpha:0.8];
@@ -93,10 +110,11 @@
     _model = model;
     self.nameTitleLabel.text=_model.name?_model.name:@"";
     NSURL *url = [NSURL URLWithString:_model.image?_model.image:@""];
-    [self.iconImageView mdd_setImage:url completion:^(UIImage * _Nonnull image, NSError * _Nonnull error) {
+    [self.iconImageView mdd_setImage:url placeholderImage:nil completion:^(UIImage * __nullable image, NSError * __nullable error) {
         if (error) {
             NSLog(@"download error --- %@",error);
         }
     }];
 }
+
 @end
